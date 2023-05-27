@@ -2,14 +2,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
 
-export const HomePage=()=> {
+export const HomePage=({data})=> {
     return (
 
-        <div className={styles.main}>
+        <div>
 
-            <h1> Events Page</h1>
-
-            <div>
 
                 {
                     data.map(ev=>(
@@ -23,12 +20,6 @@ export const HomePage=()=> {
                     ))
                 }
 
-
-            </div>
-
-             
-                
-               
 
 
         </div>
