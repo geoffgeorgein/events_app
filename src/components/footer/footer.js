@@ -2,11 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>footer
-    <p>
-        Time To Code ... A project built using Nextjs.
-    </p>
-    </div>
+    <footer>
+      <p> © 2022 Time to Code - A Project Built with Next.js </p>
+    </footer>
   )
 }
 
