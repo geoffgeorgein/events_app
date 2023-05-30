@@ -9,7 +9,7 @@ const EventsPage=({data})=> {
 
             <h1> Events Page</h1>
 
-            <div>
+            <div className='events_page'>
 
                 {
                     data.map(ev=>(

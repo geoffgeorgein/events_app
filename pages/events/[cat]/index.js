@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
+import Catevent from '@/src/components/events/cat-event';
 
 const EventPage=({data})=> {
     return (
@@ -9,20 +10,7 @@ const EventPage=({data})=> {
 
             
 
-            <div>
-                {
-                    data.map(ev=>(
-                        <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} >
-                            
-                                <Image src={ev.image} height={300} width={300}/>
-                                <h2>{ev.title}</h2>
-                                <p>{ev.description}</p>
-                            
-                        </Link>
-                    ))
-                }
-            </div>
-                
+        <Catevent data={data} />
                
 
 
