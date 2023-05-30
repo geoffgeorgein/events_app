@@ -26,21 +26,6 @@ export default function Home({data}) {
       <HomePage data={data}/>
 
       
-{/* 
-      <main className={`${styles.main} ${inter.className}`}>
-      {console.log(data)}
-a
-      {data?.map((ev)=>(
-        <a key={ev.id} href={`/events/${ev.id}`}>
-        <Image width={200} height={300} src={ev.image} />
-
-        <h2>{ev.title}</h2>
-        <p>{ev.description}</p>
-        </a>
-      ))} */}
-
-        
-      {/* </main> */}
     </>
   )
 }
