@@ -4,17 +4,30 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 const SingleEvent = ({data}) => {
+
+  data=data[0];
   return (
     <div>
-      <h1> Event One</h1>
-      {data?.map((ev)=>(
-        <a key={ev.id} >
-        <Image width={600} height={400} src={ev.image} />
+    {console.log('Data')}
+      {console.log(data)}
+      <h1> {data.title}</h1>
+     
+        
+        <Image width={600} height={400} src={data.image} alt={data.title} />
 
-        <h2>{ev.title}</h2>
-        <p>{ev.description}</p>
-        </a>
-      ))}
+        <h2>{data.title}</h2>
+        <p>{data.description}</p>
+       
+        <form >
+
+          <label>Get registered for this event</label>
+          <input type='email' id='email' placeholder='Enetr your email here'></input>
+          <button>Submit</button>
+
+
+        </form>
+        
+      
       </div>
   )
 }
