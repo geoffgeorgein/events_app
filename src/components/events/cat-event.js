@@ -6,7 +6,8 @@ import Link from 'next/link';
 const Catevent = ({data}) => {
   return (
     
-        <div>
+        <div className='cat_events'>
+            <div className='content'>
                 {
                     data.map(ev=>(
                         <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} >
@@ -18,6 +19,7 @@ const Catevent = ({data}) => {
                         </Link>
                     ))
                 }
+            </div>
         </div>
                 
   )
