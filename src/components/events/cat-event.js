@@ -10,7 +10,7 @@ const Catevent = ({data}) => {
             <div className='content'>
                 {
                     data.map(ev=>(
-                        <Link key={ev.id} href={`/events/${ev.city}/${ev.id}`} >
+                        <Link className='card' key={ev.id} href={`/events/${ev.city}/${ev.id}`} >
                             
                                 <Image src={ev.image} height={300} width={300}/>
                                 <h2>{ev.title}</h2>
