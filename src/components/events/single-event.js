@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
@@ -10,6 +10,8 @@ const SingleEvent = ({data}) => {
 
   const router=useRouter();
 
+  const [message,setmessage]=useState('');
+
   const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const Onsubmit=async(e)=>{
@@ -18,6 +20,10 @@ const SingleEvent = ({data}) => {
     const emailValue=inputemail.current.value;
     console.log(emailValue);
     const eventId=router?.query.id;
+
+    if(!emailValue.match(validRegex)){
+      setmessage('Please introduce a correct email addresses');
+    }
 
     try{
       const response = await fetch('/api/email-registeration', {
@@ -31,7 +37,8 @@ const SingleEvent = ({data}) => {
       if(!response.ok)  throw new Error(`Error: ${response.status}`);
 
       const data = await response.json();
-      console.log(data);
+      setmessage(data.message);
+      inputemail.current.value = '';
 
     }
     
@@ -62,6 +69,7 @@ const SingleEvent = ({data}) => {
 
 
         </form>
+        <p>{message}</p>
         
       
       </div>
