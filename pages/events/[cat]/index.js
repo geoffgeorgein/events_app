@@ -45,8 +45,8 @@ const EventPage=({data})=> {
 
   export async function getStaticProps(context){
 
-    console.log("context")
-    console.log(context);
+    // console.log("context")
+    // console.log(context);
 
     const id = context?.params.cat;
     const { allEvents } = await import('/data/data.json');
